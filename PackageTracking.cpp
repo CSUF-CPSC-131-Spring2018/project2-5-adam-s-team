@@ -9,12 +9,13 @@
 #include "PackageTracking.h"
 
 PackageTracking::PackageTracking(const string& strnum) {
-	//to be completed
+	cursor = tracker.begin();
 }
 
 // add a new update
 void PackageTracking::m_addUpdate(const string& status, const string& location, const time_t& timeUpdated) {
-	//to be completed
+	ShippingStatus new_status(status, location, timeUpdated);
+	tracker.push_back(new_status);
 }
 
 bool PackageTracking::m_moveBackward()//move iterator one step earlier in time
@@ -44,7 +45,7 @@ string PackageTracking::m_getStatus()//return the status of the current update
 
 int PackageTracking::m_getNumofUpdate() const // get the total numbers of shipping status updates
 {
-	//to be completed
+	return tracker.size();
 }
 
 void PackageTracking::m_printPreviousUpdates() //print all previous updates in the shipping chain when the package was shipped, all the way up to (but not including) the current update you are viewing (may not be the most recent update)
