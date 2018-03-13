@@ -43,7 +43,7 @@ bool PackageTracking::m_moveForward()//move iterator one step forward in time
 
 string PackageTracking::m_getLocation( )//return the location of the current update
 {
-    //return cursor->location;
+    //return cursor->location; //possibly the correct answer?
     return cursor->m_getLocation();
 }
 
@@ -55,13 +55,13 @@ time_t PackageTracking::m_getTime( )//return the time of the current update
 
 string PackageTracking::m_getStatus( )//return the status of the current update
 {
-    //return cursor->status;
+    //return cursor->status; //possibly the correct answer?
     return cursor->m_getStatus();
 }
 
 int PackageTracking::m_getNumofUpdate() const // get the total numbers of shipping status updates
 {
-    return numOfUpdates;
+    return numOfUpdates; //returns the counted number of m_addUpdate()
 }
 
 void PackageTracking::m_printPreviousUpdates() //print all previous updates in the shipping chain when the package was shipped, all the way up to (but not including) the current update you are viewing (may not be the most recent update)
