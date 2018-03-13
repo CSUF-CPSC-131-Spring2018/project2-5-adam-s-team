@@ -22,9 +22,11 @@ public:
     string m_getStatus();
     string m_getLocation();
     time_t m_getTime();
-    
-private: 
 
+private:
+    string myStatus;
+    string myLocation;
+    time_t myTime;
 };
 
 
